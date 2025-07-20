@@ -1,0 +1,46 @@
+[project]
+name = "context-utils"
+version = "0.1.0"
+description = "Context manager helpers and utilities"
+authors = [
+    {name = "Paul Hutchings", email = "dev@studiop.page"},
+]
+dependencies = []
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "GPL3.0"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=8.3.2",
+    "coverage>=7.6.1",
+]
+dev = [
+    "pylint>=3.2.7",
+    "black>=24.8.0",
+    "isort>=5.13.2",
+]
+
+[tool.isort]
+profile = "black"
+
+[tool.coverage.run]
+branch = true
+source = ["src/context_utils"]
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.coverage.json]
+pretty_print = true
+
+[tool.pytest.ini_options]
+testpaths = ["__test__"]
